@@ -1,3 +1,7 @@
+#Virtual Studio Code Extentions
+#Prettier
+.prettierrc.json
+
 # Logs
 logs
 *.log
