@@ -565,6 +565,7 @@
           <!-- Соц. сети -->
           <div class="page-footer__item">
             <b class="subject white-text">Присоединяйтесь</b>
+
             <ul class="social-list">
               <li class="social-list__item">
                 <a
@@ -625,9 +626,9 @@
 
             <form class="form-subscribe">
               <input
-                class="form-subscribe__user-email input-text"
-                type="text"
-                name="user-email"
+                class="form-subscribe__input-text input-text"
+                type="email"
+                name="user-email-subscribe"
                 placeholder="E-mail"
               />
               <button
@@ -663,22 +664,85 @@
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal relative">
-        <h1>WINDOW</h1>
-        <p>lorem</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat autem
-          id sit aliquam sint consectetur voluptatibus ex officiis, possimus
-          odio, nulla consequuntur voluptas consequatur inventore blanditiis
-          alias fugit sunt assumenda omnis molestias laudantium. Cupiditate
-          vitae nesciunt expedita ipsum. Tempora consequuntur porro cumque
-          repellat quasi dolor at quidem! Veritatis natus neque animi doloribus
-          consequuntur odit, ipsa vero? Odit nisi quisquam dignissimos neque
-          laudantium nesciunt voluptatum rem. Accusantium illum doloribus
-          expedita dolorum labore ut aliquid. In, veniam quo reprehenderit
-          dolore illo cum omnis vel quasi quae exercitationem aliquid nemo quos
-          quaerat atque enim harum, fuga iure recusandae numquam possimus labore
-          repudiandae doloremque.
-        </p>
+        <form class="form-order-service">
+          <b class="form-order-service__subject"
+            >Оставьте свои данные, мы вам перезвоним</b
+          >
+          <label class="form-order-service__label relative">
+            <input
+              class="form-order-service__input-text input-text"
+              type="text"
+              name="customer-name"
+              placeholder=" "
+            />
+            <svg class="form-order-service__icon">
+              <use href="./images/svg-images.svg#form-name-icon"></use>
+            </svg>
+            <span class="form-order-service__label-text">Имя</span>
+          </label>
+
+          <label class="form-order-service__label relative">
+            <input
+              class="form-order-service__input-text input-text"
+              type="text"
+              name="customer-tel"
+              placeholder=" "
+            />
+            <svg class="form-order-service__icon">
+              <use href="./images/svg-images.svg#form-tel-icon"></use>
+            </svg>
+            <span class="form-order-service__label-text">Телефон</span>
+          </label>
+
+          <label class="form-order-service__label relative">
+            <input
+              class="form-order-service__input-text input-text"
+              type="text"
+              name="customer-email"
+              placeholder=" "
+            />
+            <svg class="form-order-service__icon">
+              <use href="./images/svg-images.svg#form-email-icon"></use>
+            </svg>
+            <span class="form-order-service__label-text">Почта</span>
+          </label>
+          <label class="form-order-service__label relative">
+            <textarea
+              class="form-order-service__input-text input-text textarea"
+              rows="5"
+              name="customer-comments"
+              placeholder=" "
+            ></textarea>
+            <span class="form-order-service__label-text textarea"
+              >Комментарий</span
+            >
+          </label>
+
+          <div class="policy-agreement">
+            <label class="checkbox">
+              <input
+                class="checkbox__native"
+                type="checkbox"
+                name="topic"
+                value="html"
+              />
+
+              <svg class="checkbox_icon accent-text">
+                <use href="./images/svg-images.svg#form-checkbox-icon"></use>
+              </svg>
+            </label>
+            <p class="policy-agreement__warning">
+              Соглашаюсь с рассылкой и принимаю
+              <a class="policy-agreement__rules-link" href="#">
+                условия договора</a
+              >
+            </p>
+          </div>
+
+          <button class="btn-accent accent-bg" type="submit">
+            Подписаться
+          </button>
+        </form>
 
         <button class="modal__close" data-modal-close>
           закрыть модальное окно
