@@ -712,6 +712,7 @@ button {
 
   transition: opacity 250ms var(--b-cube);
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -735,6 +736,9 @@ button {
     0px 1px 3px rgba(0, 0, 0, 0.12);
 
   transition: transform 250ms var(--b-cube);
+}
+.modal:focus {
+  background-color: crimson;
 }
 .modal__close {
   position: absolute;
