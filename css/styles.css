@@ -812,7 +812,7 @@ button {
 }
 /**/
 .form-order-service {
-  min-width: 448px;
+  min-width: 450px;
   text-align: center;
 }
 
@@ -826,7 +826,7 @@ button {
 }
 .form-order-service__icon {
   position: absolute;
-  top: 39px;
+  top: 40px;
   left: 16px;
   width: 18px;
   height: 18px;
@@ -868,7 +868,7 @@ button {
 }
 .form-order-service__label-text {
   position: absolute;
-  top: 40px;
+  top: 42px;
   left: 42px;
 }
 .form-order-service__label-text.textarea {
@@ -877,9 +877,18 @@ button {
 
 /* policy-agreement */
 .policy-agreement {
+  display: flex;
+  align-items: center;
+  padding: 20px 11px 30px;
 }
 .policy-agreement__warning {
+  text-align: left;
+  padding-left: 9px;
   line-height: 1.71;
 }
 .policy-agreement__rules-link {
+  white-space: nowrap;
+  text-decoration: underline;
+  text-transform: capitalize;
+  color: var(--color-accent);
 }
