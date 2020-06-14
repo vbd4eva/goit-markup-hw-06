@@ -385,6 +385,8 @@ button {
   background-color: var(--color-footer-background);
 }
 .page-footer__row {
+  margin-left: -15px;
+  margin-right: -15px;
   padding-top: 48px;
   padding-bottom: 28px;
   display: flex;
@@ -691,9 +693,6 @@ button {
 /**/
 
 /* backdrop + modal */
-.no-scroll {
-  overflow: hidden;
-}
 .blur {
   filter: blur(3px);
   transition: filter 2000ms linear;
@@ -704,7 +703,6 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.5);
 
   opacity: 1;
@@ -760,12 +758,17 @@ button {
   width: 15px;
   height: 2px;
   background-color: var(--color-text-title);
+  transition: transform 250ms var(--b-cube);
 }
 .modal__close::before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .modal__close::after {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal__close:hover::before,
+.modal__close:hover::after {
+  transform: translate(-50%, -50%) rotate(0);
 }
 /**/
 /* forms */
@@ -806,9 +809,17 @@ button {
 .checkbox__native:checked ~ .checkbox_icon {
   opacity: 1;
 }
-/* .form-subscribe {
-} */
+.form-subscribe {
+  display: flex;
+  margin-left: -6px;
+  margin-right: -6px;
+}
 .form-subscribe__input-text {
+  flex-grow: 1;
+
+  margin-left: 6px;
+  margin-right: 6px;
+
   padding: 15px 16px;
 
   font-size: 16px;
@@ -817,6 +828,10 @@ button {
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.form-subscribe__submit {
+  margin-left: 6px;
+  margin-right: 6px;
 }
 /**/
 .form-order-service {
@@ -848,6 +863,17 @@ button {
   padding: 12px 18px 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
 }
+
+.form-order-service__input-text:focus:invalid {
+  outline-color: orange;
+}
+
+.form-order-service__input-text:focus:invalid ~ .form-order-service__icon,
+.form-order-service__input-text:not(:placeholder-shown):invalid
+  ~ .form-order-service__icon {
+  color: orange;
+}
+
 .form-order-service__input-text:focus ~ .form-order-service__label-text,
 .form-order-service__input-text:not(:placeholder-shown)
   ~ .form-order-service__label-text {
@@ -858,7 +884,11 @@ button {
   letter-spacing: 0.01em;
 
   color: var(--color-accent);
+  animation-name: move-label;
+  animation-duration: 250ms;
+  animation-timing-function: var(--b-cubic);
 }
+
 .form-order-service__input-text:focus
   ~ .form-order-service__label-text.textarea,
 .form-order-service__input-text:not(:placeholder-shown)
@@ -882,7 +912,14 @@ button {
 .form-order-service__label-text.textarea {
   left: 16px;
 }
-
+@keyframes move-label {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: var(--color-accent);
+  }
+}
 /* policy-agreement */
 .policy-agreement {
   display: flex;

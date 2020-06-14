@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
-  <body class="page studio" data-no-scroll>
+  <body class="page studio">
     <div data-blur-wrapper>
       <!-- Шапка сайта -->
       <header class="page-header">
@@ -676,6 +676,8 @@
               class="form-order-service__input-text input-text"
               type="text"
               name="customer-name"
+              required
+              pattern="^[A-Za-zА-Яа-яЁёЇїІі\s]+$"
               placeholder=" "
             />
             <svg class="form-order-service__icon">
@@ -689,6 +691,8 @@
               class="form-order-service__input-text input-text"
               type="text"
               name="customer-tel"
+              required
+              pattern="^[0-9(_)\s\+\-]+$"
               placeholder=" "
             />
             <svg class="form-order-service__icon">
@@ -700,7 +704,7 @@
           <label class="form-order-service__label relative">
             <input
               class="form-order-service__input-text input-text"
-              type="text"
+              type="email"
               name="customer-email"
               placeholder=" "
             />
@@ -728,6 +732,7 @@
                 type="checkbox"
                 name="topic"
                 value="html"
+                required
               />
 
               <svg class="checkbox_icon accent-text">
